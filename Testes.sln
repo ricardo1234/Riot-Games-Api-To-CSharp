@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAPI", "TestAPI\TestAPI.csproj", "{DA50FF7F-8382-435F-8647-3962C6889116}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiotApi", "RiotApi\RiotApi.csproj", "{48A4B670-156F-4BA4-8F42-9909AFF59646}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA50FF7F-8382-435F-8647-3962C6889116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA50FF7F-8382-435F-8647-3962C6889116}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA50FF7F-8382-435F-8647-3962C6889116}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA50FF7F-8382-435F-8647-3962C6889116}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48A4B670-156F-4BA4-8F42-9909AFF59646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48A4B670-156F-4BA4-8F42-9909AFF59646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48A4B670-156F-4BA4-8F42-9909AFF59646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48A4B670-156F-4BA4-8F42-9909AFF59646}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F126CE6-8CC7-4D34-89FB-7F1E3560A930}
+	EndGlobalSection
+EndGlobal
