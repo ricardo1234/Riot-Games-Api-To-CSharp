@@ -49,7 +49,11 @@
   <ItemGroup>
     <Compile Include="Champion.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="MyDateTimeConverter.cs" />
+    <Compile Include="Participant.cs" />
+    <Compile Include="Perks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Spectator.cs" />
     <Compile Include="StaticData.cs" />
     <Compile Include="Summoner.cs" />
   </ItemGroup>
