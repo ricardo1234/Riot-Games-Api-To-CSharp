@@ -20,15 +20,42 @@ namespace RiotApi
     public enum Plataform
     {
         EUW1,
-        EUN1
+        EUN1,
+        NA1,
+        JP1,
+        KR,
+        OC1,
+        BR1,
+        LA1,
+        LA2,
+        RU,
+        TR1,
+        PBE1
     }
     public enum GameType
     {
-        MATCHED_GAME
+        MATCHED_GAME,
+        TUTORIAL_GAME,
+        CUSTOM_GAME
     }
     public enum GameMode
     {
-        CLASSIC
+        CLASSIC,
+        ODIN,
+        ARAM,
+        TUTORIAL,
+        URF,
+        DOOMBOTSTEEMO,
+        ONEFORALL,
+        ASCENSION,
+        FIRSTBLOOD,
+        KINGPORO,
+        SIEGE,
+        ASSASSINATE,
+        ARSR,
+        DARKSTAR,
+        STARGUARDIAN,
+        PROJECT
     }
 }
 
