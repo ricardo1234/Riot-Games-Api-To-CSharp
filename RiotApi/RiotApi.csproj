@@ -48,17 +48,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Champion.cs" />
+    <Compile Include="ChampionMastery.cs" />
+    <Compile Include="ChampionStatic.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="MyDateTimeConverter.cs" />
     <Compile Include="Participant.cs" />
     <Compile Include="Perks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Spectator.cs" />
+    <Compile Include="Static Data Champs\Block.cs" />
+    <Compile Include="Static Data Champs\Image.cs" />
+    <Compile Include="Static Data Champs\Info.cs" />
+    <Compile Include="Static Data Champs\Item.cs" />
+    <Compile Include="Static Data Champs\LevelTip.cs" />
+    <Compile Include="Static Data Champs\partype.cs" />
+    <Compile Include="Static Data Champs\Passive.cs" />
+    <Compile Include="Static Data Champs\Recommended.cs" />
+    <Compile Include="Static Data Champs\Skin.cs" />
+    <Compile Include="Static Data Champs\Spell.cs" />
+    <Compile Include="Static Data Champs\Stats.cs" />
+    <Compile Include="Static Data Champs\Var.cs" />
     <Compile Include="StaticData.cs" />
     <Compile Include="Summoner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,14 +8,16 @@ namespace RiotApi
 {
     public static class StaticData
     {
-        public static string APIKey = "?api_key=RGAPI-1f8f3ded-8df9-4b53-bf4f-c538540d2276";
+        public static string APIKey = "?api_key=RGAPI-1d1ccae3-ab16-49b4-a164-b692d4bd1e05";
         public static string BaseUrl = "https://euw1.api.riotgames.com/lol/";
     }
     public enum RequestType
     {
         ById,
         ByName,
-        ByAccount
+        ByAccount,
+        BySummoner,
+        ByChampAndSummoner
     }
     public enum Plataform
     {
@@ -55,7 +57,8 @@ namespace RiotApi
         ARSR,
         DARKSTAR,
         STARGUARDIAN,
-        PROJECT
+        PROJECT,
+        INTRO
     }
 }
 
