@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RiotApi;
+using RiotApi.Static_Data_Champs;
+
 namespace TestAPI
 {
     class Program
@@ -12,7 +14,7 @@ namespace TestAPI
         {
             while (true)
             {
-                var rfh = ChampionStatic.GetListAsync();
+                var c = Item.GetAsync(1001);
                 Console.Read();
                 Console.Write("Summoner Name:");
                 var summoner = Summoner.GetAsync(Console.ReadLine(), RequestType.ByName);
@@ -47,7 +49,7 @@ namespace TestAPI
 
                 Console.WriteLine("Finish Details of the Game");
 
-                Masteries:
+                Masteries: Console.Read();
                 Console.WriteLine();
                 Console.WriteLine("*************************************************************************");
                 Console.WriteLine("********************* Get The Masteries For champs **********************");
@@ -55,11 +57,11 @@ namespace TestAPI
                 Console.WriteLine();
 
                 var data = ChampionMastery.GetAsync(summoner.id.ToString(), RequestType.BySummoner);
+                if (data == null)
+                    continue;
                 foreach (var item in data)
                 {
                     string a = item.championId < 10 ? "  " : item.championId < 100 ? " " : "";
-                   // Champion temp = new Champion() { id = item.championId };
-                    //temp.LoadStatic();
                     Console.WriteLine($"Champion: {item.championId}{a} | Level: {item.championLevel} | Chest Granted: {item.chestGranted} | Last Time Played: {item.lastPlayTime}");
                 }
 

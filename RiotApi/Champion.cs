@@ -20,15 +20,14 @@ namespace RiotApi
         public bool freeToPlay { get; set; }
         public int id { get; set; }
         
-        public static List<Champion> GetListAsync()
+        public static List<Champion> GetAllAsync()
         {
-            string retorno = HttpExecute.Execute(Uri).Result;
-            return retorno == null ? null : JObject.Parse(retorno)["champions"].ToObject<List<Champion>>();
+            return (List<Champion>)HttpExecute.Execute<List<Champion>>(Uri).Result;
         }
         public static Champion GetAsync(int id)
         {
-            string retorno = HttpExecute.Execute($"{Uri}/{id}").Result;
-            return retorno == null ? null : JToken.Parse(retorno).ToObject<Champion>();
+            return (Champion)HttpExecute.Execute<Champion>($"{Uri}/{id}").Result;
+           
         }
 
     }

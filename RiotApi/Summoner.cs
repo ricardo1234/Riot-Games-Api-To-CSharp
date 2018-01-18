@@ -23,23 +23,21 @@ namespace RiotApi
 
         public static Summoner GetAsync(string parameter, RequestType type)
         {
-            string retorno;
             switch (type)
             {
                 case RequestType.ById:
-                    retorno = HttpExecute.Execute($"{Uri}{parameter}").Result;
+                    return (Summoner)HttpExecute.Execute<Summoner>($"{Uri}{parameter}").Result;
                     break;
                 case RequestType.ByName:
-                    retorno = HttpExecute.Execute($"{Uri}by-name/{parameter}").Result;
+                    return (Summoner)HttpExecute.Execute<Summoner>($"{Uri}by-name/{parameter}").Result;
                     break;
                 case RequestType.ByAccount:
-                    retorno = HttpExecute.Execute($"{Uri}by-account/{parameter}").Result;
+                    return (Summoner)HttpExecute.Execute<Summoner>($"{Uri}by-account/{parameter}").Result;
                     break;
                 default:
-                    retorno = null;
+                    return null;
                     break;
             }
-            return retorno == null ? null : JToken.Parse(retorno).ToObject<Summoner>();
         }
     }
 }

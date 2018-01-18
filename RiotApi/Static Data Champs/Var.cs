@@ -10,6 +10,6 @@ namespace RiotApi.Static_Data_Champs
     {
         public string key { get; set; }
         public string link { get; set; }
-        public List<int> coeff { get; set; }
+        public List<double> coeff { get; set; }
     }
 }

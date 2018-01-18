@@ -26,8 +26,7 @@ namespace RiotApi
 
         public static Spectator GetAsync(int id)
         {
-            string retorno = HttpExecute.Execute($"{uri}{id}").Result;
-            return retorno == null ? null : JToken.Parse(retorno).ToObject<Spectator>();
+            return (Spectator)HttpExecute.Execute<Spectator>($"{uri}{id}").Result;
         }
     }
     public class Observers

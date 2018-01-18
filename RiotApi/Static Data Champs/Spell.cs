@@ -29,5 +29,29 @@ namespace RiotApi.Static_Data_Champs
         public LevelTip levelTip { get; set; }
         public Image Image { get; set; }
         public List<Var> vars { get; set; }
+
+        public string Format()
+        {
+            string dados = sanitizedTooltip;
+            if (vars == null)
+                goto Effects;
+
+            foreach (var item in vars)
+            {
+                dados = dados.Replace($"{{{{ {item.key} }}}}", (item.coeff[0]*100).ToString() + "%");
+            }
+            Effects:
+            {
+                int increment = 0;
+                foreach (var item in effectBurn)
+                {
+                   dados = dados.Replace($"{{{{ e{increment} }}}}", item);
+
+                    increment++;
+                }
+            }
+            return dados;
+
+        }
     }
 }

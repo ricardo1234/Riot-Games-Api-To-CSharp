@@ -8,7 +8,7 @@ namespace RiotApi
 {
     public static class StaticData
     {
-        public static string APIKey = "?api_key=RGAPI-1d1ccae3-ab16-49b4-a164-b692d4bd1e05";
+        public static string APIKey = "?api_key=RGAPI-6a5a5012-d21f-4a44-aac3-fdc50110b5b1";
         public static string BaseUrl = "https://euw1.api.riotgames.com/lol/";
     }
     public enum RequestType

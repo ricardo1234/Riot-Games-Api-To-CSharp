@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using RiotApi.Static_Data_Champs;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
@@ -9,16 +11,45 @@ namespace RiotApi
 {
     public static class HttpExecute
     {
-        public static async Task<string> Execute(string uri)
+        public static async Task<object> Execute<T>(string uri, string parammeters = "")
         {
             HttpResponseMessage response;
             using (HttpClient client = new HttpClient())
             {
-                response = await client.GetAsync(string.Format("{0}{1}{2}&tags=all", StaticData.BaseUrl, uri, StaticData.APIKey));
+                string retorno = null;
+                response = await client.GetAsync(string.Format("{0}{1}{2}{3}", StaticData.BaseUrl, uri, StaticData.APIKey, parammeters));
                 if (response.IsSuccessStatusCode)
-                    return await response.Content.ReadAsStringAsync();
+                    retorno = await response.Content.ReadAsStringAsync();
+                if (retorno == null)
+                    return null;
+
+                switch (typeof(T).Name)
+                {
+                    case "List`1":
+                        if (typeof(T).FullName == typeof(List<Champion>).FullName)
+                            return JObject.Parse(retorno).Root["champions"].ToObject<T>();
+                        else if (typeof(T).FullName == typeof(List<ChampionMastery>).FullName)
+                        {
+                            return JArray.Parse(retorno).ToObject<T>();
+
+                        }
+                        else
+                            return null;
+                   /* case nameof(Champion):
+                        return JObject.Parse(retorno).Root.ToObject<T>();
+                    case nameof(Summoner):
+                        return JObject.Parse(retorno).Root.ToObject<T>();
+                    case nameof(Spectator):
+                        return JObject.Parse(retorno).Root.ToObject<T>();
+                    case nameof(ChampionMastery):
+                        return JObject.Parse(retorno).Root.ToObject<T>();
+                    case nameof(Item):
+                        return JObject.Parse(retorno).Root.ToObject<T>();*/
+
+                    default:
+                        return JObject.Parse(retorno).Root.ToObject<T>();
+                }
             }
-            return null;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace RiotApi
 {
     public class ChampionStatic
     {
-        private static string Uri = "static-data/v3/champions/266";
+        private static string Uri = "static-data/v3/champions/";
 
         // Simple Data
         public string lore { get; set; }
@@ -33,10 +33,14 @@ namespace RiotApi
         public Image image { get; set; }
         public Passive passive { get; set; }
 
-        public static ChampionStatic GetListAsync()
+        public static ChampionStatic GetAsync(int id)
         {
-            string retorno = HttpExecute.Execute(Uri).Result;
-            return retorno == null ? null : JObject.Parse(retorno).Root.ToObject<ChampionStatic>();
+            return (ChampionStatic)HttpExecute.Execute<ChampionStatic>($"{Uri}{id}",$"&tags=all").Result;
+        }
+        public static List<ChampionStatic> GetAllAsync()
+        {
+            return (List<ChampionStatic>)HttpExecute.Execute<List<ChampionStatic>>(Uri).Result;
+            
         }
     }
 }

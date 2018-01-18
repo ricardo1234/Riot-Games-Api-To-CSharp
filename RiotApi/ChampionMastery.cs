@@ -26,19 +26,18 @@ namespace RiotApi
 
         public static List<ChampionMastery> GetAsync(string idSummoner, RequestType type, string idChampion = null)
         {
-            string retorno = null;
             switch (type)
             {
                 case RequestType.BySummoner:
-                    retorno = HttpExecute.Execute($"{Uri}{idSummoner}").Result;
+                    return (List<ChampionMastery>)HttpExecute.Execute<List<ChampionMastery>>($"{Uri}{idSummoner}").Result;
                     break;
                 case RequestType.ByChampAndSummoner:
-                    retorno = HttpExecute.Execute($"{Uri}{idSummoner}{UriByChamp}{idChampion}").Result;
+                    return (List<ChampionMastery>)HttpExecute.Execute<List<ChampionMastery>>($"{Uri}{idSummoner}{UriByChamp}{idChampion}").Result;
                     break;
                 default:
+                    return null;
                     break;
             }
-            return retorno == null ? null : JToken.Parse(retorno).Root.ToObject<List<ChampionMastery>>();
         }
     }
 }

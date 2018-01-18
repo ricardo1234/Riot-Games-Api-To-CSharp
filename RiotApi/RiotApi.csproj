@@ -51,6 +51,7 @@
     <Compile Include="ChampionMastery.cs" />
     <Compile Include="ChampionStatic.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="LanguageToString.cs" />
     <Compile Include="MyDateTimeConverter.cs" />
     <Compile Include="Participant.cs" />
     <Compile Include="Perks.cs" />
@@ -66,6 +67,8 @@
     <Compile Include="Static Data Champs\Recommended.cs" />
     <Compile Include="Static Data Champs\Skin.cs" />
     <Compile Include="Static Data Champs\Spell.cs" />
+    <Compile Include="Static Data Champs\Static Data Items\Gold.cs" />
+    <Compile Include="Static Data Champs\Static Data Items\StatsItem.cs" />
     <Compile Include="Static Data Champs\Stats.cs" />
     <Compile Include="Static Data Champs\Var.cs" />
     <Compile Include="StaticData.cs" />
