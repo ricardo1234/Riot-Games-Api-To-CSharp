@@ -33,14 +33,22 @@ namespace RiotApi
         public Image image { get; set; }
         public Passive passive { get; set; }
 
+        /// <summary>
+        /// GetAsync - Get All Information From a Specific Champion
+        /// </summary>
+        /// <param name="id">Champion Id</param>
+        /// <returns>ChampionStatic or null (if theres no champion with this Id)</returns>
         public static ChampionStatic GetAsync(int id)
         {
             return (ChampionStatic)HttpExecute.Execute<ChampionStatic>($"{Uri}{id}",$"&tags=all").Result;
         }
+        /// <summary>
+        /// GetAllAsync - Get All Information From a All Champions
+        /// </summary>
+        /// <returns>ChampionStatic or null (if theres some Error)</returns>
         public static List<ChampionStatic> GetAllAsync()
         {
-            return (List<ChampionStatic>)HttpExecute.Execute<List<ChampionStatic>>(Uri).Result;
-            
+            return (List<ChampionStatic>)HttpExecute.Execute<List<ChampionStatic>>(Uri).Result;            
         }
     }
 }

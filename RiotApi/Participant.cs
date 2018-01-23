@@ -19,8 +19,5 @@ namespace RiotApi
         public int spell2Id { get; set; }
         public int spell1Id { get; set; }
         public int teamId { get; set; }
-
-
-        
     }
 }

@@ -11,6 +11,7 @@ namespace RiotApi.Static_Data_Champs
     {
         private static string Uri = "static-data/v3/items/";
 
+        //Simple Data
         public int id { get; set; }
         public int count { get; set; }
         public string name { get; set; }
@@ -19,6 +20,8 @@ namespace RiotApi.Static_Data_Champs
         public string sanitizedDescription { get; set; }
         public List<string> tags { get; set; }
         public List<string> into { get; set; }
+
+        //complex Data
         public Image image { get; set; }
         public Gold gold { get; set; }
         public StatsItem stats { get; set; }
@@ -31,7 +34,6 @@ namespace RiotApi.Static_Data_Champs
         public static List<Item> GetAllAsync()
         {
             return (List<Item>)HttpExecute.Execute<List<Item>>(Uri).Result;
-
         }
-    }   
+    }
 }

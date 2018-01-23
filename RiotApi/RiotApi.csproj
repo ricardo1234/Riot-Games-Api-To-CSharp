@@ -49,9 +49,20 @@
   <ItemGroup>
     <Compile Include="Champion.cs" />
     <Compile Include="ChampionMastery.cs" />
-    <Compile Include="ChampionStatic.cs" />
+    <Compile Include="Match\Match.cs" />
+    <Compile Include="Match\MatchList.cs" />
+    <Compile Include="Match\Participant.cs" />
+    <Compile Include="Match\ParticipantIdentity.cs" />
+    <Compile Include="Match\ParticipantStats.cs" />
+    <Compile Include="Match\Player.cs" />
+    <Compile Include="Match\SimpleMatch.cs" />
+    <Compile Include="Match\Team.cs" />
+    <Compile Include="Match\TeamBan.cs" />
+    <Compile Include="Match\TimeLine.cs" />
+    <Compile Include="Static Data Champs\ChampionStatic.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="LanguageToString.cs" />
+    <Compile Include="Static Data Maps\MapInfo.cs" />
     <Compile Include="MyDateTimeConverter.cs" />
     <Compile Include="Participant.cs" />
     <Compile Include="Perks.cs" />
@@ -71,6 +82,16 @@
     <Compile Include="Static Data Champs\Static Data Items\StatsItem.cs" />
     <Compile Include="Static Data Champs\Stats.cs" />
     <Compile Include="Static Data Champs\Var.cs" />
+    <Compile Include="Static Data Maps\Map.cs" />
+    <Compile Include="Static Data Masteries\Masteries.cs" />
+    <Compile Include="Static Data Masteries\Mastery.cs" />
+    <Compile Include="Static Data Masteries\MasteryTreeItems.cs" />
+    <Compile Include="Static Data Masteries\Tree.cs" />
+    <Compile Include="Static Data Masteries\TreeItems.cs" />
+    <Compile Include="Static Data Profile Icon\ProfileIcon.cs" />
+    <Compile Include="Static Data Profile Icon\ProfileIcons.cs" />
+    <Compile Include="Static Data Summoner\SummonerSpell.cs" />
+    <Compile Include="Static Data Summoner\SummonerSpells.cs" />
     <Compile Include="StaticData.cs" />
     <Compile Include="Summoner.cs" />
   </ItemGroup>

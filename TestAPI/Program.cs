@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using RiotApi;
+using RiotApi.Match;
 using RiotApi.Static_Data_Champs;
+using RiotApi.Static_Data_Masteries;
+using RiotApi.Static_Data_Summoner;
 
 namespace TestAPI
 {
@@ -14,10 +18,9 @@ namespace TestAPI
         {
             while (true)
             {
-                var c = Item.GetAsync(1001);
-                Console.Read();
                 Console.Write("Summoner Name:");
-                var summoner = Summoner.GetAsync(Console.ReadLine(), RequestType.ByName);
+                var summoner = Summoner.GetAsync(/*Console.ReadLine()*/"Best Vaýne EU", RequestType.ByName);
+                
                 if (summoner == null)
                 {
                     Console.WriteLine("User Not Found");
@@ -64,8 +67,7 @@ namespace TestAPI
                     string a = item.championId < 10 ? "  " : item.championId < 100 ? " " : "";
                     Console.WriteLine($"Champion: {item.championId}{a} | Level: {item.championLevel} | Chest Granted: {item.chestGranted} | Last Time Played: {item.lastPlayTime}");
                 }
-
-
+                Console.Read();
             }
         }
     }
