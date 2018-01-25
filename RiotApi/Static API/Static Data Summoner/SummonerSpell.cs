@@ -1,4 +1,5 @@
-﻿using RiotApi.Static_Data_Champs;
+﻿using RiotApi.Emuns;
+using RiotApi.Static_Data_Champs;
 using System.Collections.Generic;
 
 namespace RiotApi.Static_Data_Summoner

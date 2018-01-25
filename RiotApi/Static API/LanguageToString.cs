@@ -8,7 +8,6 @@ namespace RiotApi
 {
     public class LanguageToString
     {
-        public static string Uri = "static-data/v3/language-strings/";
 
         public Dictionary<string, string> data { get; set; }
         public string version { get; set; }
@@ -20,7 +19,7 @@ namespace RiotApi
         /// <returns>LanguageToString or Null</returns>
         public static LanguageToString GetAsync()
         {
-            return (LanguageToString)HttpExecute.Execute<LanguageToString>(Uri).Result;
+            return (LanguageToString)HttpExecute.Execute<LanguageToString>(StaticData.LanguageToStringUri).Result;
         }
     }
 }

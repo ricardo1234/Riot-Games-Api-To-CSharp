@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using RiotApi.Emuns;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,9 +36,5 @@ namespace RiotApi
         {
             return (Spectator)HttpExecute.Execute<Spectator>($"{uri}{id}").Result;
         }
-    }
-    public class Observers
-    {
-        public string encryptionKey { get; set; }
     }
 }

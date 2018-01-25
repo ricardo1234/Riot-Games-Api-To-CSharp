@@ -15,6 +15,6 @@ namespace RiotApi.Match
         public int spell2Id { get; set; }
         public string highestAchievedSeasonTier { get; set; }
         public ParticipantStats stats { get; set; }
-        public TimeLine timeline { get; set; }
+        public SimpleTimeLine timeline { get; set; }
     }
 }

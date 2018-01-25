@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using RiotApi;
+using RiotApi.Emuns;
+using RiotApi.League;
 using RiotApi.Match;
 using RiotApi.Static_Data_Champs;
 using RiotApi.Static_Data_Masteries;
@@ -19,14 +21,17 @@ namespace TestAPI
             while (true)
             {
                 Console.Write("Summoner Name:");
-                var summoner = Summoner.GetAsync(/*Console.ReadLine()*/"Best Vaýne EU", RequestType.ByName);
+                var summoner = Summoner.GetAsync(/*Console.ReadLine()*/"Nolife Raphael", RequestType.ByName);
                 
                 if (summoner == null)
                 {
                     Console.WriteLine("User Not Found");
                     continue;
                 }
-
+                var c = ChampionMastery.GetScoreAsync(summoner.id);
+                Console.Read();
+                /*
+                var s = SummonerLeague.GetAsync(summoner.id);
                 Console.WriteLine();
 
                 Console.WriteLine($"Id: {summoner.id} | AccountId: {summoner.accountId} | Level: {summoner.summonerLevel} | Name: {summoner.name} | Icon: {summoner.profileIconId}");
@@ -66,8 +71,8 @@ namespace TestAPI
                 {
                     string a = item.championId < 10 ? "  " : item.championId < 100 ? " " : "";
                     Console.WriteLine($"Champion: {item.championId}{a} | Level: {item.championLevel} | Chest Granted: {item.chestGranted} | Last Time Played: {item.lastPlayTime}");
-                }
-                Console.Read();
+                }*/
+
             }
         }
     }
