@@ -41,6 +41,12 @@
         #region Spectator
         public static string Spectator_Uri = $"spectator/{version}/active-games/by-summoner/";
         #endregion
+
+        #region Match
+        public static string MatchList_Uri = $"match/{version}/matchlists/by-account/";
+
+
+        #endregion
     }
 }
 

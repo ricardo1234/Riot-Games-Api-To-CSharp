@@ -20,13 +20,15 @@ namespace TestAPI
             while (true)
             {
                 Console.Write("Summoner Name:");
-                var summoner = Summoner.GetAsync(/*Console.ReadLine()*/"Best Vaýne EU", RequestType.ByName);//37688998 ID
+                var summoner = Summoner.GetAsync(/*Console.ReadLine()*/"Best Vaýne EU", RequestType.ByName);//37688998 ID //40324613
 
                 if (summoner == null)
                 {
                     Console.WriteLine("User Not Found");
                     continue;
                 }
+
+                MatchList.GetAsync(14,recent: true);
                 var c = ChampionMastery.GetScoreAsync(756);
                 Console.Read();
                 /*

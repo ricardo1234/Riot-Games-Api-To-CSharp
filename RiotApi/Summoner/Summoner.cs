@@ -22,7 +22,7 @@ namespace RiotApi.Summoner
         #region Static Methods
 
         /// <summary>
-        /// Get Infotmation for a Specific Summoner, by 3 diferant ways. By the Summoner Name, Account Id or Summoner Id
+        /// Get Infotmation for a Specific Summoner, by 3 diferant ways. By Summoner Name, Account Id or Summoner Id
         /// </summary>
         /// <param name="parameter"> System.string - Summoner Name: RequestType.ByName, Account Id: RequestType.ByAccount or Summoner Id: RequestType.ById</param>
         /// <param name="requestType">System.RequestType - Permited: ById, ByName, ByAccount</param>
