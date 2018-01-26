@@ -110,6 +110,11 @@
     <Compile Include="Static API\Static Data Summoner\SummonerSpell.cs" />
     <Compile Include="Static API\Static Data Summoner\SummonerSpells.cs" />
     <Compile Include="StaticData.cs" />
+    <Compile Include="Status\Incident.cs" />
+    <Compile Include="Status\Message.cs" />
+    <Compile Include="Status\Service.cs" />
+    <Compile Include="Status\Status.cs" />
+    <Compile Include="Status\Translation.cs" />
     <Compile Include="Summoner\Summoner.cs" />
     <Compile Include="Match\TimeLine Data\Events.cs" />
     <Compile Include="Match\TimeLine Data\Frame.cs" />

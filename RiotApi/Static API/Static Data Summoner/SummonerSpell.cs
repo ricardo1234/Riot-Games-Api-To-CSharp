@@ -1,8 +1,9 @@
-﻿using RiotApi.Emuns;
-using RiotApi.Static_Data_Champs;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using RiotApi.Emuns;
+using RiotApi.Some_Logic;
+using RiotApi.Static_API.Static_Data_Champs;
 
-namespace RiotApi.Static_Data_Summoner
+namespace RiotApi.Static_API.Static_Data_Summoner
 {
     public class SummonerSpell
     {

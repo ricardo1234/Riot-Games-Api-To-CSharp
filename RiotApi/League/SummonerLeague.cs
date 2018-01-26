@@ -1,9 +1,7 @@
 ﻿using RiotApi.Emuns;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RiotApi.Some_Logic;
 
 namespace RiotApi.League
 {
@@ -35,12 +33,8 @@ namespace RiotApi.League
         /// </summary>
         /// <param name="summonerId">System.int - Id of the Requested Summoner</param>
         /// <returns>List of SummonerLeague Objects</returns>
-        public static List<SummonerLeague> GetAsync(int summonerId)
-        {
-            return (List<SummonerLeague>)HttpExecute.Execute<List<SummonerLeague>>($"{StaticData.League_SummonerUri}/{summonerId}").Result;
-        }
+        public static List<SummonerLeague> GetAsync(int summonerId) => (List<SummonerLeague>)HttpExecute.Execute<List<SummonerLeague>>($"{StaticData.League_SummonerUri}/{summonerId}").Result;
 
         #endregion
-
     }
 }

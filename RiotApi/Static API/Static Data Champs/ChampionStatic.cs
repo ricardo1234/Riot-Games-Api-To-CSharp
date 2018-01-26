@@ -1,12 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
-using RiotApi.Static_Data_Champs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using RiotApi.Some_Logic;
 
-namespace RiotApi
+namespace RiotApi.Static_API.Static_Data_Champs
 {
     public class ChampionStatic
     {

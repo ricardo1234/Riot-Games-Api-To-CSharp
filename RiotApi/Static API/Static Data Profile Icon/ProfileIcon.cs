@@ -1,6 +1,6 @@
-﻿using RiotApi.Static_Data_Champs;
+﻿using RiotApi.Static_API.Static_Data_Champs;
 
-namespace RiotApi.Static_Data_Profile_Icon
+namespace RiotApi.Static_API.Static_Data_Profile_Icon
 {
     public class ProfileIcon
     {

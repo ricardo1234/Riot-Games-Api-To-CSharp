@@ -1,13 +1,10 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using RiotApi.Emuns;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
+using RiotApi.Emuns;
+using RiotApi.Some_Logic;
 
-namespace RiotApi
+namespace RiotApi.Champion_Mastery
 {
     public class ChampionMastery
     {
@@ -29,7 +26,7 @@ namespace RiotApi
         #region Static Methods
 
         /// <summary>
-        /// Get the Mastery of Champions for a Specific Summoner
+        /// Get the Mastery of Champions or Champion for Specific Summoner
         /// </summary>
         /// <param name="idSummoner">System.long - Id of the Requested Summoner | Required</param>
         /// <param name="type">Riot.Enuns.RequestType - Permited: BySummoner, ByChampAndSummoner | Required</param>
@@ -48,13 +45,15 @@ namespace RiotApi
             }
         }
 
+        /// <summary>
+        /// Get the Summoner Total Score, which is the sum of individual champion mastery levels.
+        /// </summary>
+        /// <param name="idSummoner">System.long - Id of the Requested Summoner</param>
+        /// <returns>System.int</returns>
         public static int GetScoreAsync(long idSummoner)
         {
-           return (int)HttpExecute.Execute<int>($"{StaticData.ChampionMastery_ScoreUri}/{idSummoner}").Result;
-             
+            return (int)HttpExecute.Execute<int>($"{StaticData.ChampionMastery_ScoreUri}/{idSummoner}").Result;
         }
         #endregion
-
-
     }
 }

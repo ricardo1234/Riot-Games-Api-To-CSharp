@@ -1,4 +1,4 @@
-﻿namespace RiotApi.Static_Data_Masteries
+﻿namespace RiotApi.Static_API.Static_Data_Masteries
 {
     public class TreeItems
     {

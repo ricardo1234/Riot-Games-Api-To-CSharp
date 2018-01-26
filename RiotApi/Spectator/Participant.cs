@@ -1,14 +1,9 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RiotApi
+﻿namespace RiotApi.Spectator
 {
     public class Participant
     {
+        #region Attributes/Properties
+
         public int profileIconId { get; set; }
         public int championId { get; set; }
         public string summonerName { get; set; }
@@ -19,5 +14,7 @@ namespace RiotApi
         public int spell2Id { get; set; }
         public int spell1Id { get; set; }
         public int teamId { get; set; }
+        
+        #endregion
     }
 }

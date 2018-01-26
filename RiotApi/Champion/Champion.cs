@@ -1,42 +1,36 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using RiotApi.Some_Logic;
 
-namespace RiotApi
+namespace RiotApi.Champion
 {
     public class Champion
     {
-        private static string Uri = "platform/v3/champions/";
+        #region Attributes/Properties
 
-        public string rankedPlayEnabled { get; set; }
+        public bool rankedPlayEnabled { get; set; }
         public bool botEnabled { get; set; }
         public bool botMmEnabled { get; set; }
         public bool active { get; set; }
         public bool freeToPlay { get; set; }
-        public int id { get; set; }
+        public long id { get; set; }
+
+        #endregion
+
+        #region Static Methods
 
         /// <summary>
-        /// GetAllAsync - Get Some Information From All Champions
+        /// Get Information From All Champions
         /// </summary>
-        /// <returns>Champion List or Null</returns>
-        public static List<Champion> GetAllAsync()
-        {
-            return (List<Champion>)HttpExecute.Execute<List<Champion>>(Uri).Result;
-        }
+        /// <param name="freeToPlay">System.bool - Select Only Free to Play Champs | Default false</param>
+        /// <returns>List of Champions</returns>
+        public static List<Champion> GetAllAsync(bool freeToPlay = false) => (List<Champion>)HttpExecute.Execute<List<Champion>>(StaticData.Champion_Uri, $"&freeToPlay={freeToPlay}").Result;
         /// <summary>
-        /// GetAsync - Get Some Information From one Champion
+        /// Get Information From a Specific Champion
         /// </summary>
-        /// <param name="id">Champion Id</param>
-        /// <returns>Champion or Null</returns>
-        public static Champion GetAsync(int id)
-        {
-            return (Champion)HttpExecute.Execute<Champion>($"{Uri}/{id}").Result;
-        }
+        /// <param name="championId">System.long -  Id of the Requested Champion</param>
+        /// <returns>Champion</returns>
+        public static Champion GetAsync(long championId) => (Champion)HttpExecute.Execute<Champion>($"{StaticData.Champion_Uri}/{championId}").Result;
 
+        #endregion
     }
 }

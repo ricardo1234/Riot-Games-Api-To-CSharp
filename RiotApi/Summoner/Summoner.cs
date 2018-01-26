@@ -1,18 +1,14 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
+﻿using System;
+using Newtonsoft.Json;
 using RiotApi.Emuns;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RiotApi.Some_Logic;
 
-namespace RiotApi
+namespace RiotApi.Summoner
 {
     public class Summoner
     {
-        
+        #region Attributes/Properties
+
         public int profileIconId { get; set; }
         public string name { get; set; }
         public int summonerLevel { get; set; }
@@ -21,25 +17,30 @@ namespace RiotApi
         [JsonConverter(typeof(MicrosecondEpochConverter))]
         public DateTime revisionDate { get; set; }
 
+        #endregion
+
+        #region Static Methods
+
         /// <summary>
-        /// 
+        /// Get Infotmation for a Specific Summoner, by 3 diferant ways. By the Summoner Name, Account Id or Summoner Id
         /// </summary>
-        /// <param name="parameter">Could be: String - whith the Summoner Name, </param>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        public static Summoner GetAsync(string parameter, RequestType type)
+        /// <param name="parameter"> System.string - Summoner Name: RequestType.ByName, Account Id: RequestType.ByAccount or Summoner Id: RequestType.ById</param>
+        /// <param name="requestType">System.RequestType - Permited: ById, ByName, ByAccount</param>
+        /// <returns>Summoner</returns>
+        public static Summoner GetAsync(string parameter, RequestType requestType)
         {
-                switch (type)
-                {
-                    case RequestType.ById:
-                        return (Summoner)HttpExecute.Execute<Summoner>($"{StaticData.SummonerUri}{parameter}").Result;
-                    case RequestType.ByName:
-                        return (Summoner)HttpExecute.Execute<Summoner>($"{StaticData.SummonerUri}by-name/{parameter}").Result;
-                    case RequestType.ByAccount:
-                        return (Summoner)HttpExecute.Execute<Summoner>($"{StaticData.SummonerUri}by-account/{parameter}").Result;
-                    default:
-                        return null;
-                }
+            switch (requestType)
+            {
+                case RequestType.ById:
+                    return (Summoner)HttpExecute.Execute<Summoner>($"{StaticData.Summoner_Uri}{parameter}").Result;
+                case RequestType.ByName:
+                    return (Summoner)HttpExecute.Execute<Summoner>($"{StaticData.Summoner_Uri}by-name/{parameter}").Result;
+                case RequestType.ByAccount:
+                    return (Summoner)HttpExecute.Execute<Summoner>($"{StaticData.Summoner_Uri}by-account/{parameter}").Result;
+                default:
+                    return null;
+            }
         }
+        #endregion
     }
 }

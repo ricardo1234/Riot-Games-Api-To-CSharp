@@ -1,11 +1,7 @@
-﻿using RiotApi.Emuns;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using RiotApi.Emuns;
 
-namespace RiotApi.TimeLine_Data
+namespace RiotApi.Match.TimeLine_Data
 {
     public class Events
     {

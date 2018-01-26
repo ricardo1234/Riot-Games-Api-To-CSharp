@@ -1,11 +1,6 @@
-﻿using RiotApi.Static_Data_Champs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RiotApi.Static_API.Static_Data_Champs;
 
-namespace RiotApi.Static_Data_Maps
+namespace RiotApi.Static_API.Static_Data_Maps
 {
     public class Map
     {

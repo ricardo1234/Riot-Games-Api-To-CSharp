@@ -1,14 +1,12 @@
-﻿using Newtonsoft.Json.Linq;
-using RiotApi.League;
-using RiotApi.Static_Data_Champs;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+using RiotApi.Champion_Mastery;
+using RiotApi.League;
 
-namespace RiotApi
+namespace RiotApi.Some_Logic
 {
     public static class HttpExecute
     {
@@ -29,7 +27,7 @@ namespace RiotApi
                 switch (typeof(T).Name)
                 {
                     case "List`1":
-                        if (typeof(T).FullName == typeof(List<Champion>).FullName)
+                        if (typeof(T).FullName == typeof(List<Champion.Champion>).FullName)
                             return JObject.Parse(retorno).Root["champions"].ToObject<T>();
                         else if (typeof(T).FullName == typeof(List<ChampionMastery>).FullName || typeof(T).FullName == typeof(List<SummonerLeague>).FullName)
                             return JArray.Parse(retorno).ToObject<T>();

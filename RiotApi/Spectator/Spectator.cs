@@ -1,24 +1,19 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using RiotApi.Emuns;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
+using RiotApi.Emuns;
+using RiotApi.Some_Logic;
 
-namespace RiotApi
+namespace RiotApi.Spectator
 {
     public class Spectator
     {
-        private static string uri = "spectator/v3/active-games/by-summoner/";
+        #region Attributes/Properties
 
-        //Simple Data
-        public int gameLength { get; set; }
-        public int gameQueueConfigId { get; set; }
-        public int mapId { get; set; }
-        public double gameId { get; set; }
-        //Complex Data
+        public long gameLength { get; set; }
+        public long gameQueueConfigId { get; set; }
+        public long mapId { get; set; }
+        public long gameId { get; set; }
         [JsonConverter(typeof(MicrosecondEpochConverter))]
         public DateTime gameStartTime { get; set; }
         public Platform plataformId { get; set; }
@@ -27,14 +22,16 @@ namespace RiotApi
         public Observers observers { get; set; }
         public List<Participant> participants { get; set; }
 
+        #endregion
+
+        #region Static Methods
+
         /// <summary>
-        /// GetAsync - Get To Know Current Game Information
+        /// Get To Know Current Game Information for a Specific Summoner
         /// </summary>
-        /// <param name="id">Summoner Id</param>
-        /// <returns>Spectator or null (if no game has been found)</returns>
-        public static Spectator GetAsync(int id)
-        {
-            return (Spectator)HttpExecute.Execute<Spectator>($"{uri}{id}").Result;
-        }
+        /// <param name="summonerId">System.long - Id og the Requested Summoner</param>
+        /// <returns>Spectator</returns>
+        public static Spectator GetAsync(long summonerId) => (Spectator)HttpExecute.Execute<Spectator>($"{StaticData.Spectator_Uri}{summonerId}").Result;
+        #endregion
     }
 }

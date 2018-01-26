@@ -5,12 +5,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using RiotApi;
+using RiotApi.Champion_Mastery;
 using RiotApi.Emuns;
 using RiotApi.League;
 using RiotApi.Match;
-using RiotApi.Static_Data_Champs;
-using RiotApi.Static_Data_Masteries;
-using RiotApi.Static_Data_Summoner;
+using RiotApi.Summoner;
 
 namespace TestAPI
 {
@@ -21,14 +20,14 @@ namespace TestAPI
             while (true)
             {
                 Console.Write("Summoner Name:");
-                var summoner = Summoner.GetAsync(/*Console.ReadLine()*/"Nolife Raphael", RequestType.ByName);
-                
+                var summoner = Summoner.GetAsync(/*Console.ReadLine()*/"Best Vaýne EU", RequestType.ByName);//37688998 ID
+
                 if (summoner == null)
                 {
                     Console.WriteLine("User Not Found");
                     continue;
                 }
-                var c = ChampionMastery.GetScoreAsync(summoner.id);
+                var c = ChampionMastery.GetScoreAsync(756);
                 Console.Read();
                 /*
                 var s = SummonerLeague.GetAsync(summoner.id);

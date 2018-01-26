@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using RiotApi.Some_Logic;
 
-namespace RiotApi.Static_Data_Summoner
+namespace RiotApi.Static_API.Static_Data_Summoner
 {
     public class SummonerSpells
     {

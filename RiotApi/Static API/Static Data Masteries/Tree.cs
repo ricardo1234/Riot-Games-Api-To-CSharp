@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace RiotApi.Static_Data_Masteries
+namespace RiotApi.Static_API.Static_Data_Masteries
 {
     public class Tree
     {

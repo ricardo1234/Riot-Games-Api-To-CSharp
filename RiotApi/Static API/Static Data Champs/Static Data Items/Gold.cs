@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-namespace RiotApi.Static_Data_Champs.Static_Data_Items
+﻿using Newtonsoft.Json;
+
+namespace RiotApi.Static_API.Static_Data_Champs.Static_Data_Items
 {
     public class Gold
     {

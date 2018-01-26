@@ -1,12 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace RiotApi
+namespace RiotApi.Some_Logic
 {
     public class MicrosecondEpochConverter : DateTimeConverterBase
     {

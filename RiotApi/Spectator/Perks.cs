@@ -1,17 +1,15 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace RiotApi
+namespace RiotApi.Spectator
 {
     public class Perks
     {
+        #region Attributes/Properties
+
         public int perkStyle { get; set; }
         public List<int> perkIds { get; set; }
         public int perkSubStyle { get; set; }
-        
+
+        #endregion
     }
 }

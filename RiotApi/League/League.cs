@@ -1,9 +1,7 @@
 ﻿using RiotApi.Emuns;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RiotApi.Some_Logic;
 
 namespace RiotApi.League
 {
@@ -26,32 +24,22 @@ namespace RiotApi.League
         /// </summary>
         /// <param name="queue">RiotApi.Emuns.QueueType - Enumerable QueueType</param>
         /// <returns>League Object</returns>
-        public static League GetChallengerSeriesAsync(QueueType queue)
-        {
-            return (League)HttpExecute.Execute<League>($"{StaticData.League_UriChallenger}/{queue}").Result;
-        }
+        public static League GetChallengerSeriesAsync(QueueType queue) => (League)HttpExecute.Execute<League>($"{StaticData.League_UriChallenger}/{queue}").Result;
 
         /// <summary>
         ///  Get players in Master League
         /// </summary>
         /// <param name="queue">RiotApi.Emuns.QueueType - Enumerable QueueType</param>
         /// <returns>League Object</returns>
-        public static League GetMasterSeriesAsync(QueueType queue)
-        {
-            return (League)HttpExecute.Execute<League>($"{StaticData.League_UriMaster}/{queue}").Result;
-        }
+        public static League GetMasterSeriesAsync(QueueType queue) => (League)HttpExecute.Execute<League>($"{StaticData.League_UriMaster}/{queue}").Result;
 
         /// <summary>
         /// Get players in a League
         /// </summary>
         /// <param name="guidLeague">System.Guid - League Id format to Guid</param>
         /// <returns>League Object</returns>
-        public static League GetLeagueAsync(Guid guidLeague)
-        {
-            return (League)HttpExecute.Execute<League>($"{StaticData.League_Uri}/{guidLeague}").Result;
-        }
-       
-        #endregion
+        public static League GetLeagueAsync(Guid guidLeague) => (League)HttpExecute.Execute<League>($"{StaticData.League_Uri}/{guidLeague}").Result;
 
+        #endregion
     }
 }

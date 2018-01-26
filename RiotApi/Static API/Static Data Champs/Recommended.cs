@@ -1,11 +1,7 @@
-﻿using RiotApi.Emuns;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using RiotApi.Emuns;
 
-namespace RiotApi.Static_Data_Champs
+namespace RiotApi.Static_API.Static_Data_Champs
 {
     public class Recommended
     {
